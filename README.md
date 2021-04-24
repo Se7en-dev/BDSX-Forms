@@ -456,6 +456,8 @@ You can map labels to all form components except modal forms buttons.
 
 ##### Written by Se7en for the BDSX community
 
+This code is licensed under GNU General Public License v3.0
+
 Feel free to PR any mistakes/improvements !
 
 if you have any questions add me on Discord : Se7en#9999
