@@ -72,6 +72,8 @@ But... for some reason you cannot add buttons to custom forms. All custom forms 
 
 ![Capture d’écran (344).png](./customform.png)
 
+---
+
 # Forms data
 
 Forms are JSON data. With BDSX, there are two manners of generating this data :
@@ -97,6 +99,8 @@ Modal Forms return a `boolean` corresponding to the button that the player press
 #### Custom Forms
 
 Custom Forms return an `array` containing the data of the form's components. Refer to the section below to see what each component returns. If the player closed the form, `null` is returned.
+
+---
 
 # Forms components
 
@@ -264,6 +268,8 @@ BDSX API class :
 FormToggle()
 ```
 
+---
+
 # Implementing forms
 
 ## Simple Forms
@@ -410,6 +416,8 @@ const data = await Form.sendTo(NetworkID, {
 //here, data is the form response data.
 ```
 
+---
+
 # Labels
 
 BDSX API allows you to map "labels" to your components. So instead of referring to them by their index, you can map them to a string.
@@ -444,9 +452,7 @@ Nice !
 
 You can map labels to all form components except modal forms buttons.
 
-
-
-
+---
 
 ##### Written by Se7en for the BDSX community
 
