@@ -119,11 +119,33 @@ Provided data :
 | `image.type` | "path" or "url" | required if image is provided | Image type.<br/>path : local texture file.<br/>url : url of the image |
 | `image.data` | string          | required if image is provided | image path or url                                                     |
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API
 
 ```typescript
-FormButton()
+form.addButton(new FormButton("This is a button"));
+form.addButton(new FormButton("This button has an image", "path", "textures/items/apple"));
 ```
+
+Using JSON
+
+```json
+"buttons": [
+                {
+                    "text": "This is a button"
+                },
+                {
+                    "text": "This button has an image",
+                    "image": {
+                        "type": "path",
+                        "data": "textures/items/apple"
+                    }
+                }
+            ]
+```
+
+
 
 ## Custom Forms
 
@@ -139,11 +161,26 @@ Provided data :
 
 Returned data : `null`
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormLabel()
+form.addComponent(new FormLabel("This is a label"));
 ```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "label",
+                    text: "This is a label"
+                }
+]
+```
+
+
 
 #### Dropdown
 
@@ -163,11 +200,28 @@ Returned data :
 | ------- | -------------------------- |
 | integer | Index of the chosen option |
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormDropdown()
+form.addComponent(new FormDropdown("This is a dropdown", ["option 1", "option 2", "option 3"], 0));
 ```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "dropdown",
+                    text: "This is a dropdown",
+                    options: ["Option 1", "Option 2", "Option 3"],
+                    default: 0
+                }
+]
+```
+
+
 
 #### Input
 
@@ -189,11 +243,28 @@ Returned data :
 
 Note : if no text is entered `''` (empty string) will be returned.
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormInput()
+form.addComponent(new FormInput("This is an input", "placeholder", "text already entered"));
 ```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "input",
+                    text: "This is an input",
+                    placeholder: "Placeholder",
+                    default: "already entered text"
+                }
+]
+```
+
+
 
 #### Slider
 
@@ -215,11 +286,30 @@ Returned data :
 | ------ | ---------------------------- |
 | number | Value selected by the player |
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormSlider()
+form.addComponent(new FormSlider("This is a slider", 0, 100, 1, 0));
 ```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "slider",
+                    text: "This is a slider",
+                    min: 0,
+                    max: 100,
+                    step: 1,
+                    default: 0
+                }
+]
+```
+
+
 
 #### Step Slider
 
@@ -239,11 +329,32 @@ Returned data :
 | ------- | --------------------------- |
 | integer | Index of the selected value |
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormStepSlider()
+form.addComponent(new FormStepSlider("This is a step slider", ["step 1", "step 2", "step 3"], 0));
 ```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "step_slider",
+                    text: "This is a step slider",
+                    steps: [
+                        "step 1",
+                        "step 2",
+                        "step 3"
+                    ],
+                    default: 0
+                }
+]
+```
+
+
 
 #### Toggle
 
@@ -262,10 +373,24 @@ Returned data :
 | ------- | --------------------------------- |
 | boolean | Toggle value chosen by the player |
 
-BDSX API class :
+##### Implementation
+
+Using BDSX API :
 
 ```typescript
-FormToggle()
+form.addComponent(new FormToggle("this is a toggle", false));
+```
+
+Using JSON :
+
+```json
+content: [
+                {
+                    type: "toggle",
+                    text: "This is a toggle",
+                    default: false
+                }
+]
 ```
 
 ---
@@ -447,8 +572,6 @@ Here, if the player clicks the first button, `data.response` will be `"first"`.
 If the player clicks the second button, `data.response` will be `"second"`.
 
 Nice !
-
-
 
 You can map labels to all form components except modal forms buttons.
 
