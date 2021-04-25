@@ -131,18 +131,18 @@ form.addButton(new FormButton("This button has an image", "path", "textures/item
 Using JSON
 
 ```json
-"buttons": [
-                {
-                    "text": "This is a button"
-                },
-                {
-                    "text": "This button has an image",
-                    "image": {
-                        "type": "path",
-                        "data": "textures/items/apple"
-                    }
-                }
-            ]
+"buttons":[
+   {
+      "text":"This is a button"
+   },
+   {
+      "text":"This button has an image",
+      "image":{
+         "type":"path",
+         "data":"textures/items/apple"
+      }
+   }
+]
 ```
 
 
@@ -172,11 +172,11 @@ form.addComponent(new FormLabel("This is a label"));
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "label",
-                    text: "This is a label"
-                }
+"content":[
+   {
+      "type":"label",
+      "text":"This is a label"
+   }
 ]
 ```
 
@@ -211,13 +211,17 @@ form.addComponent(new FormDropdown("This is a dropdown", ["option 1", "option 2"
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "dropdown",
-                    text: "This is a dropdown",
-                    options: ["Option 1", "Option 2", "Option 3"],
-                    default: 0
-                }
+"content":[
+   {
+      "type":"dropdown",
+      "text":"This is a dropdown",
+      "options":[
+         "Option 1",
+         "Option 2",
+         "Option 3"
+      ],
+      "default":0
+   }
 ]
 ```
 
@@ -254,13 +258,13 @@ form.addComponent(new FormInput("This is an input", "placeholder", "text already
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "input",
-                    text: "This is an input",
-                    placeholder: "Placeholder",
-                    default: "already entered text"
-                }
+"content":[
+   {
+      "type":"input",
+      "text":"This is an input",
+      "placeholder":"Placeholder",
+      "default":"already entered text"
+   }
 ]
 ```
 
@@ -297,15 +301,15 @@ form.addComponent(new FormSlider("This is a slider", 0, 100, 1, 0));
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "slider",
-                    text: "This is a slider",
-                    min: 0,
-                    max: 100,
-                    step: 1,
-                    default: 0
-                }
+"content":[
+   {
+      "type":"slider",
+      "text":"This is a slider",
+      "min":0,
+      "max":100,
+      "step":1,
+      "default":0
+   }
 ]
 ```
 
@@ -340,17 +344,17 @@ form.addComponent(new FormStepSlider("This is a step slider", ["step 1", "step 2
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "step_slider",
-                    text: "This is a step slider",
-                    steps: [
-                        "step 1",
-                        "step 2",
-                        "step 3"
-                    ],
-                    default: 0
-                }
+"content":[
+   {
+      "type":"step_slider",
+      "text":"This is a step slider",
+      "steps":[
+         "step 1",
+         "step 2",
+         "step 3"
+      ],
+      "default":0
+   }
 ]
 ```
 
@@ -384,12 +388,12 @@ form.addComponent(new FormToggle("this is a toggle", false));
 Using JSON :
 
 ```json
-content: [
-                {
-                    type: "toggle",
-                    text: "This is a toggle",
-                    default: false
-                }
+"content":[
+   {
+      "type":"toggle",
+      "text":"This is a toggle",
+      "default":false
+   }
 ]
 ```
 
@@ -418,22 +422,22 @@ const form = new SimpleForm();
 
 ```typescript
 const data = await Form.sendTo(NetworkID, {
-            "type": "form",
-            "title": "This is the form's title",
-            "content": "This is the form's content",
-            "buttons": [
-                {
-                    "text": "This is a button"
-                },
-                {
-                    "text": "This button has an image",
-                    "image": {
-                        "type": "path",
-                        "data": "textures/items/apple"
-                    }
-                }
-            ]
-        });
+   "type":"form",
+   "title":"This is the form's title",
+   "content":"This is the form's content",
+   "buttons":[
+      {
+         "text":"This is a button"
+      },
+      {
+         "text":"This button has an image",
+         "image":{
+            "type":"path",
+            "data":"textures/items/apple"
+         }
+      }
+   ]
+});
 //data can be processed here
 //here, data is the form response data.
 ```
@@ -459,12 +463,12 @@ const form = new ModalForm();
 
 ```typescript
 const data = await Form.sendTo(NetworkID, {
-            "type": "modal",
-            "title": "This is the form's title",
-            "content": "This is the form's content",
-            "button1": "This is the button returning true",
-            "button2": "This is the button returning false"
-        });
+   "type":"modal",
+   "title":"This is the form's title",
+   "content":"This is the form's content",
+   "button1":"This is the button returning true",
+   "button2":"This is the button returning false"
+});
 //data can be processed here
 //here, data is the form response data.
 ```
@@ -493,50 +497,54 @@ const form = new CustomForm();
 
 ```typescript
 const data = await Form.sendTo(NetworkID, {
-            type: "custom_form",
-            title: "This is the form's title",
-            content: [
-                {
-                    type: "label",
-                    text: "This is a label"
-                },
-                {
-                    type: "dropdown",
-                    text: "This is a dropdown",
-                    options: ["Option 1", "Option 2", "Option 3"],
-                    default: 0
-                },
-                {
-                    type: "input",
-                    text: "This is an input",
-                    placeholder: "Placeholder",
-                    default: "already entered text"
-                },
-                {
-                    type: "slider",
-                    text: "This is a slider",
-                    min: 0,
-                    max: 100,
-                    step: 1,
-                    default: 0
-                },
-                {
-                    type: "step_slider",
-                    text: "This is a step slider",
-                    steps: [
-                        "step 1",
-                        "step 2",
-                        "step 3"
-                    ],
-                    default: 0
-                },
-                {
-                    type: "toggle",
-                    text: "This is a toggle",
-                    default: false
-                }
-            ]
-        });
+   "type":"custom_form",
+   "title":"This is the form's title",
+   "content":[
+      {
+         "type":"label",
+         "text":"This is a label"
+      },
+      {
+         "type":"dropdown",
+         "text":"This is a dropdown",
+         "options":[
+            "Option 1",
+            "Option 2",
+            "Option 3"
+         ],
+         "default":0
+      },
+      {
+         "type":"input",
+         "text":"This is an input",
+         "placeholder":"Placeholder",
+         "default":"already entered text"
+      },
+      {
+         "type":"slider",
+         "text":"This is a slider",
+         "min":0,
+         "max":100,
+         "step":1,
+         "default":0
+      },
+      {
+         "type":"step_slider",
+         "text":"This is a step slider",
+         "steps":[
+            "step 1",
+            "step 2",
+            "step 3"
+         ],
+         "default":0
+      },
+      {
+         "type":"toggle",
+         "text":"This is a toggle",
+         "default":false
+      }
+   ]
+});
 //data can be processed here
 //here, data is the form response data.
 ```
