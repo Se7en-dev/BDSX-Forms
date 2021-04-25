@@ -2,7 +2,7 @@
 
 # Table of contents
 
-#### [Introduction](#introduction)
+#### [Introduction](#introduction-1)
 
 - [Form Types](#form-types)
   
@@ -12,7 +12,7 @@
   
   - [Custom Forms](#custom-forms)
 
-#### [Forms data](#forms-data)
+#### [Forms data](#forms-data-1)
 
 - [Returned data](#returned-data)
   
@@ -22,7 +22,7 @@
   
   - [Custom Forms](#custom-forms-1)
 
-#### [Forms components](#forms-components)
+#### [Forms components](#forms-components-1)
 
 - [Simple Forms](#simple-forms-2)
   
@@ -70,7 +70,7 @@
     
     - [Implementation](#implementation-6)
 
-#### [Implementing forms](#implementing-forms)
+#### [Implementing forms](#implementing-forms-1)
 
 - [Simple Forms](#simple-forms-3)
   
@@ -90,11 +90,11 @@
   
   - [Using JSON](#using-json-2)
 
-#### [Labels](#labels)
+#### [Labels](#labels-1)
 
 - [Example with a Simple Form](#example-with-a-simple-form)
 
-#### [Credits](#credits)
+#### [Credits](#credits-1)
 
 ---
 
