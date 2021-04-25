@@ -1,5 +1,103 @@
 # BDSX - Forms documentation
 
+# Table of contents
+
+#### [Introduction](#introduction)
+
+- [Form Types](#form-types)
+  
+  - [Simple Forms](#simple-forms)
+  
+  - [Modal Forms](#modal-forms)
+  
+  - [Custom Forms](#custom-forms)
+
+#### [Forms data](#forms-data)
+
+- [Returned data](#returned-data)
+  
+  - [Simple Forms](#simple-forms-1)
+  
+  - [Modal Forms](#modal-forms-1)
+  
+  - [Custom Forms](#custom-forms-1)
+
+#### [Forms components](#forms-components)
+
+- [Simple Forms](#simple-forms-2)
+  
+  - [Button](#button)
+    
+    - [Data](#data)
+    
+    - [Implementation](#implementation)
+
+- [Custom Forms](#custom-forms-2)
+  
+  - [Label](#label)
+    
+    - [Data](#data-1)
+    
+    - [Implementation](#implementation-1)
+  
+  - [Dropdown](#dropdown)
+    
+    - [Data](#data-2)
+    
+    - [Implementation](#implementation-2)
+  
+  - [Input](#input)
+    
+    - [Data](#data-3)
+    
+    - [Implementation](#implementation-3)
+  
+  - [Slider](#slider)
+    
+    - [Data](#data-4)
+    
+    - [Implementation](#implementation-4)
+  
+  - [Step Slider](#step-slider)
+    
+    - [Data](#data-5)
+    
+    - [Implementation](#implementation-5)
+  
+  - [Toggle](#toggle)
+    
+    - [Data](#data-6)
+    
+    - [Implementation](#implementation-6)
+
+#### [Implementing forms](#implementing-forms)
+
+- [Simple Forms](#simple-forms-3)
+  
+  - [Using BDSX API](#using-bdsx-api)
+  
+  - [Using JSON](#using-json)
+
+- [Modal Forms](#modal-forms-2)
+  
+  - [Using BDSX API](#using-bdsx-api-1)
+  
+  - [Using JSON](#using-json-1)
+
+- [Custom Forms](#custom-forms-3)
+  
+  - [Using BDSX API](#using-bdsx-api-2)
+  
+  - [Using JSON](#using-json-2)
+
+#### [Labels](#labels)
+
+- [Example with a Simple Form](#example-with-a-simple-form)
+
+#### [Credits](#credits)
+
+---
+
 # Introduction
 
 ## Form types
@@ -110,6 +208,8 @@ Custom Forms return an `array` containing the data of the form's components. Ref
 
 Description : A clickable button
 
+##### Data
+
 Provided data :
 
 | Name         | Type            | Requirement                   | Description                                                           |
@@ -153,6 +253,8 @@ Using JSON
 
 Description : Text content
 
+##### Data
+
 Provided data :
 
 | Name   | Type   | Requirement | Description          |
@@ -185,6 +287,8 @@ Using JSON :
 #### Dropdown
 
 Description : A dropdown menu letting the player choose an option between different options
+
+##### Data
 
 Provided data :
 
@@ -231,6 +335,8 @@ Using JSON :
 
 Description : An input field letting the player input text
 
+##### Data
+
 Provided data :
 
 | Name          | Type   | Requirement | Description                                   |
@@ -273,6 +379,8 @@ Using JSON :
 #### Slider
 
 Description : A slider letting the player choose a value between a minimum and a maximum
+
+##### Data
 
 Provided data :
 
@@ -319,6 +427,8 @@ Using JSON :
 
 Description : A slider letting the player choose between different values
 
+##### Data
+
 Provided data :
 
 | Name      | Type     | Requirement                      | Description                       |
@@ -363,6 +473,8 @@ Using JSON :
 #### Toggle
 
 Description : A simple (on/off style) toggle
+
+##### Data
 
 Provided data :
 
@@ -585,7 +697,9 @@ You can map labels to all form components except modal forms buttons.
 
 ---
 
-##### Written by Se7en for the BDSX community
+# Credits
+
+Written by Se7en for the BDSX community
 
 This code is licensed under GNU General Public License v3.0
 
