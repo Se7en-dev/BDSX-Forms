@@ -245,8 +245,6 @@ Using JSON
 ]
 ```
 
-
-
 ## Custom Forms
 
 #### Label
@@ -281,8 +279,6 @@ Using JSON :
    }
 ]
 ```
-
-
 
 #### Dropdown
 
@@ -329,8 +325,6 @@ Using JSON :
 ]
 ```
 
-
-
 #### Input
 
 Description : An input field letting the player input text
@@ -373,8 +367,6 @@ Using JSON :
    }
 ]
 ```
-
-
 
 #### Slider
 
@@ -421,8 +413,6 @@ Using JSON :
 ]
 ```
 
-
-
 #### Step Slider
 
 Description : A slider letting the player choose between different values
@@ -467,8 +457,6 @@ Using JSON :
    }
 ]
 ```
-
-
 
 #### Toggle
 
@@ -518,6 +506,10 @@ Using JSON :
 #### Using BDSX API
 
 ```typescript
+import {SimpleForm, FormButton} from "bdsx/bds/form";
+```
+
+```typescript
 const form = new SimpleForm();
         form.setTitle("This is the form's title");
         form.setContent("This is the form's content");
@@ -533,23 +525,27 @@ const form = new SimpleForm();
 #### Using JSON
 
 ```typescript
+import {Form} from "bdsx/bds/form";
+```
+
+```typescript
 const data = await Form.sendTo(NetworkID, {
-   "type":"form",
-   "title":"This is the form's title",
-   "content":"This is the form's content",
-   "buttons":[
-      {
-         "text":"This is a button"
-      },
-      {
-         "text":"This button has an image",
-         "image":{
-            "type":"path",
-            "data":"textures/items/apple"
-         }
-      }
-   ]
-});
+        "type": "form",
+        "title": "This is the form's title",
+        "content": "This is the form's content",
+        "buttons": [
+            {
+                "text": "This is a button"
+            },
+            {
+                "text": "This button has an image",
+                "image": {
+                    "type": "path",
+                    "data": "textures/items/apple"
+                }
+            }
+        ]
+    });
 //data can be processed here
 //here, data is the form response data.
 ```
@@ -557,6 +553,10 @@ const data = await Form.sendTo(NetworkID, {
 ## Modal Forms
 
 #### Using BDSX API
+
+```typescript
+import {ModalForm} from "bdsx/bds/form";
+```
 
 ```typescript
 const form = new ModalForm();
@@ -574,13 +574,17 @@ const form = new ModalForm();
 #### Using JSON
 
 ```typescript
+import {Form} from "bdsx/bds/form";
+```
+
+```typescript
 const data = await Form.sendTo(NetworkID, {
-   "type":"modal",
-   "title":"This is the form's title",
-   "content":"This is the form's content",
-   "button1":"This is the button returning true",
-   "button2":"This is the button returning false"
-});
+        "type": "modal",
+        "title": "This is the form's title",
+        "content": "This is the form's content",
+        "button1": "This is the button returning true",
+        "button2": "This is the button returning false"
+    });
 //data can be processed here
 //here, data is the form response data.
 ```
@@ -588,6 +592,10 @@ const data = await Form.sendTo(NetworkID, {
 ## Custom Forms
 
 #### Using BDSX API
+
+```typescript
+import {CustomForm, FormLabel, FormDropdown, FormInput, FormSlider, FormStepSlider, FormToggle} from "bdsx/bds/form";
+```
 
 ```typescript
 const form = new CustomForm();
@@ -608,55 +616,59 @@ const form = new CustomForm();
 #### Using JSON
 
 ```typescript
+import {Form} from "bdsx/bds/form";
+```
+
+```typescript
 const data = await Form.sendTo(NetworkID, {
-   "type":"custom_form",
-   "title":"This is the form's title",
-   "content":[
-      {
-         "type":"label",
-         "text":"This is a label"
-      },
-      {
-         "type":"dropdown",
-         "text":"This is a dropdown",
-         "options":[
-            "Option 1",
-            "Option 2",
-            "Option 3"
-         ],
-         "default":0
-      },
-      {
-         "type":"input",
-         "text":"This is an input",
-         "placeholder":"Placeholder",
-         "default":"already entered text"
-      },
-      {
-         "type":"slider",
-         "text":"This is a slider",
-         "min":0,
-         "max":100,
-         "step":1,
-         "default":0
-      },
-      {
-         "type":"step_slider",
-         "text":"This is a step slider",
-         "steps":[
-            "step 1",
-            "step 2",
-            "step 3"
-         ],
-         "default":0
-      },
-      {
-         "type":"toggle",
-         "text":"This is a toggle",
-         "default":false
-      }
-   ]
-});
+        "type": "custom_form",
+        "title": "This is the form's title",
+        "content": [
+            {
+                "type": "label",
+                "text": "This is  label"
+            },
+            {
+                "type": "dropdown",
+                "text": "This is a dropdown",
+                "options": [
+                    "Option 1",
+                    "Option 2",
+                    "Option 3"
+                ],
+                "default": 0
+            },
+            {
+                "type": "input",
+                "text": "This is an input",
+                "placeholder": "Placeholder",
+                "default": "already entered text"
+            },
+            {
+                "type": "slider",
+                "text": "This is a slider",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "default": 0
+            },
+            {
+                "type": "step_slider",
+                "text": "This is a step slider",
+                "steps": [
+                    "step 1",
+                    "step 2",
+                    "step 3"
+                ],
+                "default": 0
+            },
+            {
+                "type": "toggle",
+                "text": "This is a toggle",
+                "default": false
+            }
+        ]
+    });
 //data can be processed here
 //here, data is the form response data.
 ```
