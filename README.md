@@ -198,6 +198,22 @@ Modal Forms return a `boolean` corresponding to the button that the player press
 
 Custom Forms return an `array` containing the data of the form's components. Refer to the section below to see what each component returns. If the player closed the form, `null` is returned.
 
+### Advanced Data
+
+When retriveing the data of a form, you can do `data.response` using this can also get used for a more direct response. For example:
+
+```ts
+  let form = new CustomForm();
+  form.addComponent(new FormInput('This is a example form to see data', 'Put data in here'));
+  form.addComponent(new FormDropdown('Dropdown Data Example', ['option 1', 'option 2', 'option 3']));
+  form.addComponent(new FormStepSlider('Form Data Collection step slider', ['test 1', 'test 2', 'test 3']);
+  form.sendTo(sender.getNetworkIdentifier, (async (data) => {
+    if (data.response[2] /** Step Slider */ == 0 /** test 1 */) {
+      //do whatever your wanting
+    }
+  })))
+```
+
 ---
 
 # Forms components
